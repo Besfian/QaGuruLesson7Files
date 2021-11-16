@@ -28,6 +28,9 @@ repositories {
 
 dependencies {
     testImplementation(
+            'commons-io:commons-io:2.11.0',
+            'com.codeborne:pdf-test:1.7.0',
+            'com.codeborne:xls-test:1.2',
             'org.junit.jupiter:junit-jupiter-api:5.7.2',
             'org.junit.jupiter:junit-jupiter-params:5.7.2',
             'io.qameta.allure:allure-selenide:2.14.0',
