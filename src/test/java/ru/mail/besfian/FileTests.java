@@ -1,11 +1,8 @@
 package ru.mail.besfian;
 
 import com.codeborne.pdftest.PDF;
-import com.codeborne.selenide.Configuration;
-import io.qameta.allure.Owner;
 import org.apache.commons.io.IOUtils;
 import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -25,7 +22,6 @@ public class FileTests {
         File download = $("#raw-url").download();
         String fileContent = IOUtils.toString(new FileReader(download));
         assertTrue(fileContent.contains("com.codeborne:selenide:6.0.3"));
-        sleep(5000);
     }
 
     @Test
@@ -34,7 +30,6 @@ public class FileTests {
         open("https://tools.icoder.uz/file-to-base64-converter.php");
         $("#file").uploadFromClasspath("signature1.png");
         $(".form-control").shouldHave(text("data:image/png;base64"));
-        sleep(5000);
     }
 
     @Test
@@ -44,7 +39,6 @@ public class FileTests {
         File pdf = $("#raw-url").download();
         PDF parsedPdf = new PDF(pdf);
         Assertions.assertEquals(2, parsedPdf.numberOfPages);
-        sleep(5000);
     }
 }
 
